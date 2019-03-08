@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project 1 - Evan Murray</title>
+
+    <!-- ICON -->
+    <link rel="icon" href="images/codeicon.png" />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+       
+    <!-- Boostrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    
+    <!-- Boostrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Our CSS -->
+    <link rel="stylesheet" href="css/demo.css" />
+    <link rel="stylesheet" href="css/prism.css"/>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <ul class="nav nav-pills">
+                <li class="active"><a data-toggle="pill" href="#factorial">factorial</a></li>
+                <li><a data-toggle="pill" href="#addSnippetPill">Add Code Snippet</a></li>
+                <li><a data-toggle="pill" href="#listAllPill">List All Snippets</a></li>
+                <li><a data-toggle="pill" href="#listByLangPill">List Snippets By Language</a></li>
+            </ul>
+    </nav>
+    <img src="https://s3.amazonaws.com/revature-project1-evan-murray/images/logo.png" alt="Project 1 - Evan Murray"/>
+
+          
+    <div class="tab-content">
+        <div id="factorial" class="tab-pane fade in active">
+        <!--Factorial Panel -->
+        <div class="col-md-4 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3>Factorial</h3>
+                    </div>
+                    <div id="factorialMessage">
+                    </div>
+                    <div class="form-group">
+                        <input id="number-input" placeholder="Number" class="form-control" />
+                    </div>
+                    <button id="calculate" class="btn btn-md btn-success btn-block">Calculate</button>
+                </div>
+            </div>
+        </div>
+    <div id="addSnippetPill" class="tab-pane fade">
+    <!-- Add Snippet Panel -->
+    <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3>Add a Code Snippet in the Database</h3>
+                </div>
+                <div id="addSnippetMessage">
+                </div>
+                <div class="form-group">
+                    <input id="language" placeholder="Specify the language..." class="form-control" />
+                    <input id="title" placeholder="Enter a title..." class="form-control" />
+                    <input id="description" placeholder="Enter a description..." class="form-control" />
+                    <input id="code" placeholder="Enter your code..." class="form-control" />
+                </div>
+                <button id="putSnippet" class="btn btn-md btn-success btn-block">Add</button>
+            </div>
+    
+        </div>
+    </div>
+    <div id="listAllPill" class="tab-pane fade">
+        <!-- list all Panel -->
+        <div class="col-md-4 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3>List</h3>
+                    </div>
+                    <button id="list" class="btn btn-md btn-success btn-block btn-list" data-toggle="modal" data-target="#listModal">Get All</button>
+                    <div class="panel-footer">
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div id="listByLangPill" class="tab-pane fade">
+        <!-- get by language -->
+        <div class="col-md-4 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3>List By Language</h3>
+                    </div>
+                    <div class="form-group">
+                        <input id="language-query" placeholder="Specify the language..." class="form-control" />
+                    </div>
+                    <button id="languageList" class="btn btn-md btn-success btn-block btn-list" data-toggle="modal" data-target="#languageSortedList">Get All By Language</button>
+                    <div class="panel-footer">
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+
+
+
+
+
+
+    <!-- List Modal -->
+    <div class="modal fade" id="listModal" tabindex="-1" role="dialog" aria-labelledby="listModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="listModalTitle">Code Snippets Table</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body" id="snippetList">
+            ...
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+    </div>
+    </div>
+    <!-- Lanuage Sorted List Modal-->
+    <div class="modal fade" id="languageSortedList" tabindex="-1" role="dialog" aria-labelledby="listModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="languageSortedListTitle">Code Snippets By Language</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="snippetListByLanguage">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+            </div>
+    <!-- JavaScript -->
+    <script src="js/calculateFactorial.js"></script>
+    <script src="js/putSnippet.js"></script>
+    <script src="js/listAll.js"></script>
+    <script src="js/getAllByLanguage.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/prism.js"></script>
+</body>
+</html>
